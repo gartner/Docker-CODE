@@ -17,5 +17,14 @@ apt-get update
 # Install the Collabora packages
 apt-get -y install loolwsd code-brand collaboraoffice5.3-dict* collaboraofficebasis5.3*
 
+#install fonts
+apt-get -y install ttf-dejavu-core ttf-dejavu-extra \
+    ttf-sjfonts ttf-staypuft ttf-summersby ttf-root-installer
+
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+apt-get install ttf-mscorefonts-installer
+
+cp /usr/share/root/fonts/* /opt/collaboraoffice5.3/share/fonts/truetype/
+
 # Cleanup
 rm -rf /var/lib/apt/lists/*
