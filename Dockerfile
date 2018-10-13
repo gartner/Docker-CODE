@@ -9,6 +9,8 @@ ADD /scripts/install-libreoffice.sh /
 ADD /scripts/start-libreoffice.sh /
 RUN bash install-libreoffice.sh
 
+COPY fonts/* /opt/collaboraoffice5.3/share/fonts/truetype/
+
 EXPOSE 9980
 
 # Entry point
